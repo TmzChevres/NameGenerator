@@ -22,31 +22,17 @@ app.get('/test', (req, res) => {
 
 
 
-// load chatGPT
-const openai = require('openai').default;
+// // load chatGPT
+// const openai = require('openai').default;
 
-// Set up your OpenAI API credentials
-const openaiAPIKey = secure.APIKey;
-const chatgpt = new openai(openaiAPIKey);
+// // Set up your OpenAI API credentials
+// const openaiAPIKey = secure.APIKey;
+// const chatgpt = new openai(openaiAPIKey);
 
-// Define the parameters for your chat conversation
-const params = {
-    messages: [
-        { role: 'system', content: 'You are a helpful assistant.' },
-        { role: 'user', content: 'Who won the world series in 2020?' },
-        { role: 'assistant', content: 'The Los Angeles Dodgers won the World Series in 2020.' },
-        { role: 'user', content: 'Where was it played?' },
-        { role: 'assistant', content: 'The games were played in Arlington, Texas.' }
-    ]
-};
-
-// Make the API call
-chatgpt.complete(params)
-    .then(response => {
-        const { choices } = response.data;
-        const reply = choices[0].message.content;
-        console.log('ChatGPT Reply:', reply);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+import { Configuration, OpenAIApi } from "openai";
+const configuration = new Configuration({
+    organization: "org-vcr7rrSPfrXSfF25zYsJuF5N",
+    apiKey: secure.APIKey,
+});
+const openai = new OpenAIApi(configuration);
+const response = await openai.listEngines();
