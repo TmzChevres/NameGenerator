@@ -29,7 +29,7 @@ app.get('/test', (req, res) => {
 // const openaiAPIKey = secure.APIKey;
 // const chatgpt = new openai(openaiAPIKey);
 
-import { Configuration, OpenAIApi } from "openai";
+const { Configuration, OpenAIApi } = require('openai');;
 const configuration = new Configuration({
     organization: "org-vcr7rrSPfrXSfF25zYsJuF5N",
     apiKey: secure.APIKey,
