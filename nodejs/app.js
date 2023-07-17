@@ -23,7 +23,6 @@ app.get('/test', (req, res) => {
 
 // // load chatGPT
 const { Configuration, OpenAIApi } = require("openai");
-const readlineSync = require("readline-sync");
 require("dotenv").config();
 
 (async () => {
@@ -35,7 +34,7 @@ require("dotenv").config();
   const history = [];
 
   while (true) {
-    const user_input = readlineSync.question("Your input: ");
+    const user_input = "Your input goes here";
 
     const messages = [];
     for (const [input_text, completion_text] of history) {
@@ -56,9 +55,7 @@ require("dotenv").config();
 
       history.push([user_input, completion_text]);
 
-      const user_input_again = readlineSync.question(
-        "\nWould you like to continue the conversation? (Y/N)"
-      );
+      const user_input_again = "N"; // Enter 'Y' or 'N' here
       if (user_input_again.toUpperCase() === "N") {
         return;
       } else if (user_input_again.toUpperCase() !== "Y") {
