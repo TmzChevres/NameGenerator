@@ -22,12 +22,11 @@ app.get('/test', (req, res) => {
 
 
 
-
 // load chatGPT
-const { openai } = require('openai');
+const openai = require('openai').default;
 
 // Set up your OpenAI API credentials
-const openaiAPIKey = 'YOUR_API_KEY';
+const openaiAPIKey = secure.APIKey;
 const chatgpt = new openai(openaiAPIKey);
 
 // Define the parameters for your chat conversation
