@@ -1,6 +1,7 @@
 // this should be at the top of app.js
 const express = require('express');
 const app = express();
+const fs = require('fs');
 const port = 5623;
 
 // Read in the contents of the secure.json file
