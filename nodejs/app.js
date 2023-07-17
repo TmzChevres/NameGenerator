@@ -35,5 +35,5 @@ const configuration = new Configuration({
     apiKey: secure.APIKey,
 });
 const openai = new OpenAIApi(configuration);
-// const response = await openai.listEngines();
-console.log(openai.listEngines());
+const response = openai.listEngines();
+// console.log(openai.listEngines());
