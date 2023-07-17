@@ -1,2 +1,2 @@
-/nodejs/node_modules/
-/nodejs/secure.json
+/nodejs/*
+!/nodejs/app.js
