@@ -4,14 +4,14 @@ const app = express();
 const port = 5623;
 
 
-// sets express to listen on local port 5622
+// sets express to listen on local port
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
 
 
 // test to make sure it is working
-// connect with https://peddiecs.peddie.org/nodejs/test
+// connect with /nodejs/test
 app.get('/test', (req, res) => {
     res.send('Hello World!');
 });
